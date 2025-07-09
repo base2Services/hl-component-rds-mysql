@@ -38,7 +38,6 @@ CloudFormation do
 
   Condition("SourceDBInstanceIdentifierSet", FnNot(FnEquals(Ref(:SourceDBInstanceIdentifier), 'disabled')))
   Condition("RDSStorageIOPSSet", FnNot(FnEquals(Ref(:RDSStorageIOPS), '')))
-  Condition("RDSStorageThroughputSet", FnNot(FnEquals(Ref(:RDSStorageThroughput), '')))
   Condition("IsPrimary", FnEquals(Ref(:DatabaseMode),'primary'))
   Condition("IsReplica", FnEquals(Ref(:DatabaseMode),'replica'))
   Condition("IsPromoted", FnEquals(Ref(:DatabaseMode),'promoted'))
